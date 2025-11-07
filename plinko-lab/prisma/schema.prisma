@@ -1,0 +1,31 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Round {
+  id               String   @id @default(cuid())
+  createdAt        DateTime @default(now())
+  status           String   // CREATED | STARTED | REVEALED
+
+  // Fairness
+  nonce            String
+  commitHex        String
+  serverSeed       String?  // revealed only after /reveal
+  clientSeed       String
+  combinedSeed     String
+  pegMapHash       String
+
+  // Game
+  rows             Int
+  dropColumn       Int
+  binIndex         Int
+  payoutMultiplier Float
+  betCents         Int
+  pathJson         Json
+  revealedAt       DateTime?
+}

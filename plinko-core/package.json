@@ -1,0 +1,17 @@
+{
+   "name": "plinko-core",
+  "version": "1.0.0",
+  "scripts": {
+     "testvec": "ts-node src/test-vector.ts",
+    "testeng": "ts-node src/test-engine.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/node": "^24.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
